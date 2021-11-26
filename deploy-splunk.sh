@@ -19,9 +19,8 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 SPLUNK_NAMESPACE=${SPLUNK_NAMESPACE:-splunk}
 # Use the config in this repo by default
-SPLUNK_DEPLOYMENT_CONFIG=${SPLUNK_DEPLOYMENT_CONFIG:-$SCRIPT_DIR/../integration/tests/splunk/templates/k8s/splunk-deployment.yaml}
+SPLUNK_DEPLOYMENT_CONFIG=${SPLUNK_DEPLOYMENT_CONFIG:-$SCRIPT_DIR/templates/k8s/splunk-deployment.yaml}
 
-kubectl create ns "$SPLUNK_NAMESPACE"
 sed "s/{{ namespace }}/$SPLUNK_NAMESPACE/g" "$SPLUNK_DEPLOYMENT_CONFIG" | kubectl apply -f -
 
 # TODO: wait for completion
