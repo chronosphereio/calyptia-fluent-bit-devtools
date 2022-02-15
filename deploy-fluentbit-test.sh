@@ -114,6 +114,6 @@ fi
 echo "Using Fluent Bit configuration"
 cat "$FB_CONFIG_TMP"
 
-helm upgrade --install --namespace "$FLUENT_BIT_NAMESPACE" --create-namespace --wait fluent-bit fluent-bit/fluent-bit --values="$FB_CONFIG_TMP"
+helm upgrade --install --namespace "$FLUENT_BIT_NAMESPACE" --create-namespace --wait fluent-bit fluent/fluent-bit --values="$FB_CONFIG_TMP"
 
 rm -f "$FB_CONFIG_TMP"

@@ -18,7 +18,7 @@ set -eu
 # Override with a different name if you want
 CLUSTER_NAME=${CLUSTER_NAME:-kind}
 # The fluent bit image under test
-FLUENT_BIT_IMAGE=${FLUENT_BIT_IMAGE:-fluent/fluent-bit:1.8.10}
+FLUENT_BIT_IMAGE=${FLUENT_BIT_IMAGE:-fluent/fluent-bit:latest}
 
 if [[ "${INSTALL_KIND:-no}" == "yes" ]]; then
     rm -f ./kind
