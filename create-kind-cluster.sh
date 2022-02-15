@@ -34,6 +34,8 @@ kind delete cluster --name="${CLUSTER_NAME}"
 kind create cluster --name="${CLUSTER_NAME}" --config - <<EOF
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+featureGates:
+ EphemeralContainers: true
 nodes:
 - role: control-plane
   kubeadmConfigPatches:
