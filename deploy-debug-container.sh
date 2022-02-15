@@ -14,6 +14,7 @@
 # limitations under the License.
 set -eu
 # Simple script to use ephemeral containers to debug a Fluent Bit pod
+# https://github.com/eldadru/ksniff is another alternative
 
 # Override with a different name if you want
 CLUSTER_NAME=${CLUSTER_NAME:-kind}
