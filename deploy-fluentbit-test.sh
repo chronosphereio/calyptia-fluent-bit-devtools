@@ -38,6 +38,11 @@ cat << EOF > "$FB_CONFIG_TMP"
 kind: Deployment
 replicaCount: 1
 
+podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: api/v1/metrics
+    prometheus.io/port: "2020"
+
 rbac:
   create: true  # Required for kubernetes filter
 
