@@ -40,7 +40,7 @@ replicaCount: 1
 
 podAnnotations:
     prometheus.io/scrape: "true"
-    prometheus.io/path: api/v1/metrics
+    prometheus.io/path: api/v1/metrics/prometheus
     prometheus.io/port: "2020"
 
 rbac:
