@@ -14,3 +14,4 @@ There is a [helper script](./create-kind-cluster.sh) to deploy a local K8S clust
 |deploy-prometheus.s    | Deploys a Prometheus instance into a separate namespace within K8S.                                                |
 |deploy-splunk.sh       | Deploys a Splunk instance into a separate namespace within K8S.                                                    |
 |local-minio.sh         | Deploys a container running Minio to your local machine, not in K8S.                                               |
+|code-analysis.sh       | Uses a CMake-based container to run unit tests with various tools (valgrind, coverage, etc.)                       |
