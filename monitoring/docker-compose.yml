@@ -3,11 +3,12 @@ version: "3"
 services:
 
   fluent-bit:
-    image: ${FB_BASELINE_IMAGE}
+    image: fluent/fluent-bit
     volumes:
-      - log-volume:/logs:ro
       - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
-
+      # The following are for node exporter metrics
+      - /proc:/host/proc
+      - /sys:/host/sys
   prometheus:
     image: prom/prometheus:v2.33.3
     volumes:
@@ -50,7 +51,12 @@ services:
     env_file:
       - ./grafana/config.monitoring
 
+  loki:
+      image: grafana/loki
+      ports:
+          - "3100:3100"
+      command: -config.file=/etc/loki/local-config.yaml
+
 volumes:
-  log-volume:
   prometheus-data:
   grafana-data:
